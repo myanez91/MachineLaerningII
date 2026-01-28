@@ -126,7 +126,8 @@ class DecisionTreeClassifier:
     
     def _entropy(self, y):
         """Calculate entropy."""
-        proportions = np.bincount(y) / len(y)
+        unique, counts = np.unique(y, return_counts=True)
+        proportions = counts / len(y)
         entropy = -np.sum([p * np.log2(p) for p in proportions if p > 0])
         return entropy
     

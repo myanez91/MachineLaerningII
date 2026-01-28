@@ -34,7 +34,9 @@ class LogisticRegression:
         self.bias = None
         
     def _sigmoid(self, z):
-        """Sigmoid activation function."""
+        """Sigmoid activation function with numerical stability."""
+        # Clip values to prevent overflow
+        z = np.clip(z, -500, 500)
         return 1 / (1 + np.exp(-z))
     
     def fit(self, X, y):

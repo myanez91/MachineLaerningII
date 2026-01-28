@@ -100,4 +100,7 @@ class LinearRegression:
         y_pred = self.predict(X)
         ss_tot = np.sum((y - np.mean(y)) ** 2)
         ss_res = np.sum((y - y_pred) ** 2)
+        # Handle case where all y values are identical
+        if ss_tot == 0:
+            return 0.0 if ss_res == 0 else float('-inf')
         return 1 - (ss_res / ss_tot)

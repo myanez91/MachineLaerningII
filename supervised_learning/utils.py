@@ -90,7 +90,9 @@ class StandardScaler:
         X_scaled : ndarray
             Standardized data
         """
-        return (X - self.mean_) / self.scale_
+        # Avoid division by zero by adding small epsilon to scale
+        scale = np.where(self.scale_ == 0, 1.0, self.scale_)
+        return (X - self.mean_) / scale
     
     def fit_transform(self, X):
         """
@@ -159,7 +161,10 @@ class MinMaxScaler:
         X_scaled : ndarray
             Scaled data
         """
-        X_std = (X - self.min_) / (self.max_ - self.min_)
+        # Avoid division by zero for constant features
+        data_range = self.max_ - self.min_
+        data_range = np.where(data_range == 0, 1.0, data_range)
+        X_std = (X - self.min_) / data_range
         X_scaled = X_std * (self.feature_range[1] - self.feature_range[0]) + self.feature_range[0]
         return X_scaled
     
@@ -237,12 +242,17 @@ def r2_score(y_true, y_pred):
     """
     ss_tot = np.sum((y_true - np.mean(y_true)) ** 2)
     ss_res = np.sum((y_true - y_pred) ** 2)
+    # Handle case where all y values are identical
+    if ss_tot == 0:
+        return 0.0 if ss_res == 0 else float('-inf')
     return 1 - (ss_res / ss_tot)
 
 
 def confusion_matrix(y_true, y_pred):
     """
-    Calculate confusion matrix for binary classification.
+    Calculate confusion matrix for classification.
+    
+    Supports both binary and multi-class classification.
     
     Parameters:
     -----------
@@ -253,8 +263,10 @@ def confusion_matrix(y_true, y_pred):
         
     Returns:
     --------
-    matrix : ndarray of shape (2, 2)
-        Confusion matrix [[TN, FP], [FN, TP]]
+    matrix : ndarray of shape (n_classes, n_classes)
+        Confusion matrix where element [i, j] is the count of samples
+        with true label i and predicted label j.
+        For binary classification: [[TN, FP], [FN, TP]]
     """
     classes = np.unique(np.concatenate([y_true, y_pred]))
     n_classes = len(classes)

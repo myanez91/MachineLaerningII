@@ -1,5 +1,4 @@
-# MachineLaerningII
-Machine Learning Supervisado
+# MachineLaerningII (Machine Learning Supervisado)
 
 Aprendizaje Supervisado
 

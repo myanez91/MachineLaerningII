@@ -19,80 +19,59 @@ El curso se centra en el aprendizaje supervisado, presentando los algoritmos má
 
 En el aprendizaje supervisado:
 
-Se utilizan datos etiquetados (entradas + salidas deseadas).
-
-El modelo aprende a relacionar entradas con salidas mediante un proceso de entrenamiento.
-
-Una vez entrenado, el modelo puede realizar predicciones sobre nuevos datos.
+Se utilizan datos etiquetados (entradas + salidas deseadas).\
+El modelo aprende a relacionar entradas con salidas mediante un proceso de entrenamiento.\
+Una vez entrenado, el modelo puede realizar predicciones sobre nuevos datos.\
 
 Existen numerosos algoritmos diseñados para resolver distintos problemas, cada uno con fortalezas y debilidades.
 
 🔑 Algoritmos principales
 
-Regresión Logística → Clasificación binaria, probabilidades mediante función sigmoide.
-
-K-Nearest Neighbors (KNN) → Clasificación basada en proximidad a vecinos más cercanos.
-
-Support Vector Machine (SVM) → Encuentra el hiperplano óptimo para separar clases.
-
-Árboles de Decisión → Modelo jerárquico basado en reglas, fácil de interpretar.
-
-Random Forest → Conjunto de árboles de decisión, mejora precisión y reduce overfitting.
-
-Extreme Gradient Boosting (XGBoost), CatBoost, LightGBM → Algoritmos de boosting altamente eficientes.
-
+Regresión Logística → Clasificación binaria, probabilidades mediante función sigmoide.\
+K-Nearest Neighbors (KNN) → Clasificación basada en proximidad a vecinos más cercanos.\
+Support Vector Machine (SVM) → Encuentra el hiperplano óptimo para separar clases.\
+Árboles de Decisión → Modelo jerárquico basado en reglas, fácil de interpretar.\
+Random Forest → Conjunto de árboles de decisión, mejora precisión y reduce overfitting.\
+Extreme Gradient Boosting (XGBoost), CatBoost, LightGBM → Algoritmos de boosting altamente eficientes.\
 Redes Neuronales (Perceptrón) → Modelos inspirados en el cerebro humano para clasificación y predicción.
 
 📈 Evaluación y validación de modelos
 
 Se revisan técnicas de comparación y validación, tales como:
 
-Validación cruzada
-
-Curvas ROC
-
-Matrices de confusión
-
-Medidas de precisión, recall y F1-score
+Validación cruzada\
+Curvas ROC\
+Matrices de confusión\
+Medidas de precisión, recall y F1-score\
 
 🤝 Trabajo en equipo y actitud
 
 El desarrollo de soluciones en ciencia de datos requiere:
 
-Trabajo colaborativo
-
-Diálogo y discusión respetuosa
-
-Valoración de los conceptos matemáticos que fundamentan los algoritmos.
-
+Trabajo colaborativo\
+Diálogo y discusión respetuosa\
+Valoración de los conceptos matemáticos que fundamentan los algoritmos.\
 Las implementaciones se realizan principalmente en Python o R, utilizando entornos como Jupyter Notebooks.
 
 📚 Metodología de enseñanza
 
 La asignatura es de carácter teórico-práctico y se basa en:
 
-Exposición del docente
-
-Evaluaciones formativas y sumativas
-
-Actividades en grupo e individuales
-
-Trabajo autónomo del estudiante
+Exposición del docente\
+Evaluaciones formativas y sumativas\
+Actividades en grupo e individuales\
+Trabajo autónomo del estudiante\
 
 📝 Evaluaciones
 
 Las evaluaciones se realizan mediante:
 
-Rúbricas aplicadas a problemas reales.
-
-Desarrollo de soluciones en Jupyter Notebooks.
-
-Retroalimentación constante del docente para mejorar el desempeño.
+Rúbricas aplicadas a problemas reales.\
+Desarrollo de soluciones en Jupyter Notebooks.\
+Retroalimentación constante del docente para mejorar el desempeño.\
 
 🚀 Tecnologías utilizadas
 
-Lenguajes: Python, R
-
-Entornos: Jupyter Notebook
-
-Librerías: scikit-learn, XGBoost, CatBoost, LightGBM, TensorFlow/Keras, entre otras.
+Lenguajes: Python, R\
+Entornos: Jupyter Notebook\
+Librerías: scikit-learn, XGBoost, CatBoost, LightGBM, TensorFlow/Keras, entre otras\.

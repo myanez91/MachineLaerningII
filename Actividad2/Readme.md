@@ -91,9 +91,10 @@ Los árboles de decisión destacan por su alta interpretabilidad, mientras que l
 
 
 🗂️ Estructura del repositorio
-├── notebook.ipynb        # Desarrollo completo de la actividad
-├── data/                # Dataset (si aplica)
-├── figures/             # Gráficos generados
+
+├── notebook.ipynb        # Desarrollo completo de la actividad\
+├── data/                # Dataset (si aplica)\
+├── figures/             # Gráficos generados\
 ├── README.md            # Descripción del proyecto
 
 

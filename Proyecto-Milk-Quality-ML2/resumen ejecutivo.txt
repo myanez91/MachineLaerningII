@@ -1,0 +1,17 @@
+# Resumen ejecutivo (para publicar en el foro)
+
+Este proyecto aplica **Machine Learning Supervisado (ML2)** para clasificar la calidad de leche en tres categorías (**high / medium / low**) a partir de variables fisicoquímicas y sensoriales (`pH`, `Temprature`, `Colour`, `Taste`, `Odor`, `Fat`, `Turbidity`). El objetivo se definió con un foco operativo: **detectar oportunamente la clase _low_** (minimizar falsos negativos), dado su impacto en control de calidad.
+
+La solución se construyó con un flujo **reproducible tipo CRISP-DM** y buenas prácticas de despliegue: preprocesamiento y modelo integrados en un **Pipeline** (con `RobustScaler` para robustez ante outliers) y optimización de hiperparámetros mediante `GridSearchCV` comparando **Random Forest, SVM y KNN** (con regresión logística como línea base). La decisión principal fue no quedarnos solo con métricas “perfectas”: durante la exploración se detectó **alta repetición de patrones/duplicados**, lo que puede inflar artificialmente el rendimiento cuando un patrón aparece en entrenamiento y prueba.
+
+**Decisiones clave y evidencia**
+- **Validación anti-sesgo por duplicación**: se evaluó en dos escenarios (original vs deduplicado). En el **original** las métricas resultan casi perfectas (p. ej., accuracy cercano a 1.0), mientras que en **deduplicado** el desempeño cae a un nivel más realista (en test deduplicado: accuracy ≈ 0.765; `Recall_low` entre ≈ 0.4 y 0.6 según el modelo).
+- **Evaluación más estricta**: se incorporó **GroupKFold** agrupando por patrón exacto de variables, para evitar fuga por repetición. Con este criterio, el desempeño relativo cambia y añade una visión más cercana a condiciones industriales.
+- **Modelo final seleccionado**: **Random Forest** por su robustez y facilidad de despliegue dentro de un pipeline único, complementado con validación cruzada en el escenario deduplicado (aprox. `accuracy` media ≈ 0.821 y `recall_low` medio ≈ 0.647).
+
+**Entregables del proyecto**
+- Pipeline del modelo final exportado para inferencia: `pipeline_calidad_leche_random_forest.pkl`
+- Encoder de etiquetas para decodificar predicciones: `label_encoder.pkl`
+- Tablas y figuras de soporte (EDA, métricas, comparación deduplicado, GroupKFold e interpretabilidad) en la carpeta `artifacts/`.
+
+**Conclusión**: el aporte del proyecto no es solo entrenar un clasificador, sino **validar de forma honesta** (deduplicación + GroupKFold) y priorizar métricas alineadas con el riesgo operativo (recall de _low_), dejando un pipeline listo para integración y con recomendación explícita de monitoreo de drift y reentrenamiento con nuevos datos no duplicados.

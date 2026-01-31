@@ -1,4 +1,4 @@
-# Resumen ejecutivo (para publicar en el foro)
+# Resumen ejecutivo
 
 Este proyecto aplica **Machine Learning Supervisado (ML2)** para clasificar la calidad de leche en tres categorías (**high / medium / low**) a partir de variables fisicoquímicas y sensoriales (`pH`, `Temprature`, `Colour`, `Taste`, `Odor`, `Fat`, `Turbidity`). El objetivo se definió con un foco operativo: **detectar oportunamente la clase _low_** (minimizar falsos negativos), dado su impacto en control de calidad.
 
@@ -13,5 +13,6 @@ La solución se construyó con un flujo **reproducible tipo CRISP-DM** y buenas 
 - Pipeline del modelo final exportado para inferencia: `pipeline_calidad_leche_random_forest.pkl`
 - Encoder de etiquetas para decodificar predicciones: `label_encoder.pkl`
 - Tablas y figuras de soporte (EDA, métricas, comparación deduplicado, GroupKFold e interpretabilidad) en la carpeta `artifacts/`.
+
 
 **Conclusión**: el aporte del proyecto no es solo entrenar un clasificador, sino **validar de forma honesta** (deduplicación + GroupKFold) y priorizar métricas alineadas con el riesgo operativo (recall de _low_), dejando un pipeline listo para integración y con recomendación explícita de monitoreo de drift y reentrenamiento con nuevos datos no duplicados.

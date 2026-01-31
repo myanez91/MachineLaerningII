@@ -1,36 +1,54 @@
-# Actividad 4: Redes Neuronales Artificiales y Convolucionales
+# 🧠 Actividad 4: Deep Learning - MLP & CNN para Predicción de Churn
 
-Este proyecto corresponde a la **Actividad 4** de la asignatura **Machine Learning II** (Magíster en Data Science, UDLA). El objetivo principal es implementar y comparar modelos de Deep Learning (MLP y CNN) frente a modelos clásicos para la predicción de fuga de clientes (*Churn*).
+![PyTorch](https://img.shields.io/badge/Framework-PyTorch-ee4c2c)
+![Deep Learning](https://img.shields.io/badge/Architecture-MLP%20%26%20CNN-blue)
+![Status](https://img.shields.io/badge/Mag%C3%ADster-Data%20Science-gold)
 
 ## 👥 Integrantes
-* FELIPE SANTIAGO GOICOLEA GUERRA
-* MATÍAS ELIER LABRAÑA ABARCA
-* MARCELO ANDRÉS YÁÑEZ BARRIENTOS
+* **Felipe Santiago Goicolea Guerra**
+* **Matías Elier Labraña Abarca**
+* **Marcelo Andrés Yáñez Barrientos**
 
-## 📋 Descripción del Proyecto
-La actividad se centra en el análisis de un dataset de telecomunicaciones para predecir el comportamiento de abandono de los clientes. Se exploran arquitecturas de redes neuronales utilizando **PyTorch** y se comparan con modelos previos como Random Forest y SVM.
+Este repositorio contiene la entrega final de la asignatura **Machine Learning II**. En esta fase, superamos los modelos clásicos para implementar arquitecturas de **Redes Neuronales Artificiales**, explorando cómo el aprendizaje profundo puede extraer características complejas de datos tabulares de telecomunicaciones.
 
-### Fases Principales:
-1.  **Preprocesamiento:** Limpieza de datos, codificación de variables categóricas y normalización.
-2.  **Multilayer Perceptron (MLP):** Experimentación con hiperparámetros como *Learning Rate* y *Batch Size*.
-3.  **Red Neuronal Convolucional (CNN 1D):** Adaptación de datos tabulares a una estructura matricial para aplicar capas convolucionales.
-4.  **Análisis Comparativo:** Evaluación de métricas (Accuracy, F1-Score, AUC-ROC) y discusión sobre costo computacional e interpretabilidad.
 
-## 🚀 Tecnologías Utilizadas
-* **Lenguaje:** Python 3.x
-* **Librerías Principales:**
-    * `PyTorch`: Construcción y entrenamiento de redes neuronales.
-    * `Scikit-Learn`: Métricas de evaluación y preprocesamiento.
-    * `Pandas` & `NumPy`: Manipulación de datos.
-    * `Matplotlib`: Visualización de curvas de aprendizaje y ROC.
 
-## 📂 Estructura de Archivos
-* `Actividad4_churn_MLP_CNN_adapted.ipynb`: Notebook principal con el desarrollo, experimentos y conclusiones.
-* `utils.py`: Funciones auxiliares para el entrenamiento de modelos Torch y cálculo de métricas.
-* `data-churn.csv`: Conjunto de datos utilizado para el entrenamiento y test.
-* `Actividad4.pdf`: Enunciado y requerimientos de la actividad.
+## 🎯 Objetivos de la Actividad
+* **Implementación de MLP:** Diseñar un Perceptrón Multicapa (Fully Connected) para clasificación binaria.
+* **Experimentación Hiperparamétrica:** Analizar el impacto crítico del *Learning Rate* y el *Batch Size* en la convergencia del modelo.
+* **Innovación con CNN 1D:** Adaptar datos tabulares para ser procesados por capas convolucionales, extrayendo patrones locales entre características.
+* **Benchmarking:** Realizar una comparación final entre Regresión Logística, Random Forest, SVM y Redes Neuronales.
 
-## 🛠️ Instalación y Uso
-1. Asegúrate de tener instalado Python y las dependencias necesarias:
-   ```bash
-   pip install torch pandas scikit-learn matplotlib numpy
+## 🏗️ Arquitecturas Implementadas
+
+### 1. Multilayer Perceptron (MLP)
+* **Estructura:** Capas densas con funciones de activación ReLU y Dropout para mitigar el sobreajuste.
+* **Optimización:** Uso de `BCELoss` (Binary Cross Entropy) y el optimizador Adam.
+* **Hallazgo:** Un *Learning Rate* demasiado alto provocaba inestabilidad en la pérdida, mientras que uno muy bajo ralentizaba excesivamente la convergencia.
+
+### 2. Red Neuronal Convolucional (CNN 1D)
+* **Concepto:** Aunque los datos son tabulares, se trataron como secuencias 1D para aplicar kernels que detectan interacciones entre variables contiguas.
+* **Componentes:** Capas `Conv1d`, `MaxPool1d` y capas densas finales.
+
+
+
+## 📊 Análisis Comparativo y Conclusiones
+
+| Característica | Modelos Clásicos (RF/SVM) | Redes Neuronales (MLP/CNN) |
+| :--- | :--- | :--- |
+| **Interpretabilidad** | Alta (Feature Importance) | Baja ("Caja Negra") |
+| **Costo Computacional** | Bajo | Alto (Requiere entrenamiento por épocas) |
+| **Desempeño** | Muy robusto en datos pequeños | Potencialmente superior con grandes volúmenes |
+
+### Reflexiones Finales:
+* **Riesgo de Sobreajuste:** Se observó que con el tamaño actual del dataset, las redes neuronales requieren una regularización agresiva (Dropout) para no memorizar el ruido de los datos de entrenamiento.
+* **Escalabilidad:** Las ANN/CNN son la opción preferida cuando el volumen de datos crece masivamente o cuando se integran datos no estructurados.
+
+## 🛠️ Stack Tecnológico
+* **Deep Learning Framework:** `PyTorch`
+* **Análisis de Datos:** `Pandas`, `NumPy`
+* **Visualización:** `Matplotlib` (Curvas de Loss y Accuracy por época)
+* **Preprocesamiento:** `Scikit-Learn`
+
+---
+**Magíster en Data Science 2025** | **Universidad de las Américas (UDLA)**

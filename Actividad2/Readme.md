@@ -4,6 +4,13 @@
 ![Python](https://img.shields.io/badge/Python-3.9+-blue)
 ![Ensemble Methods](https://img.shields.io/badge/Ensemble-Random%20Forest-orange)
 
+## 👥 Autores
+* **Felipe Santiago Goicolea Guerra**
+* **Matías Elier Labraña Abarca**
+* **Marcelo Andrés Yáñez Barrientos**
+
+**Magíster en Data Science 2025** | **Universidad de las Américas (UDLA)**
+
 Este repositorio contiene el desarrollo de la **Actividad 2** del Magíster en Data Science (UDLA). Tras analizar modelos lineales en la entrega anterior, aquí exploramos la potencia de los **modelos no lineales** y la capacidad de los ensambles para reducir la varianza y mejorar la generalización en la predicción de fuga de clientes.
 
 
@@ -47,10 +54,4 @@ Basado en las curvas de desempeño:
 * `utils.py`: Funciones auxiliares para el cálculo de métricas de validación cruzada y graficación.
 * `data-churn.csv`: Conjunto de datos de clientes de telecomunicaciones.
 
-## 👥 Autores
-* **Felipe Santiago Goicolea Guerra**
-* **Matías Elier Labraña Abarca**
-* **Marcelo Andrés Yáñez Barrientos**
 
----
-**Magíster en Data Science 2025** | **Universidad de las Américas (UDLA)**
